@@ -59,7 +59,7 @@ public class BooksController
                 books.remove(i);
             }
         }
-        return "Book deleted successfully";
+        return "Book has been deleted successfully";
     }
 }
 
