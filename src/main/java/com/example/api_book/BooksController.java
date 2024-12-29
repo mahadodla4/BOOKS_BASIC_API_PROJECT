@@ -17,12 +17,9 @@ public class BooksController
     }
 
     @GetMapping({"/id"})
-    public Book getBook(@RequestParam String id)
-    {
-        for(Book book:books)
-        {
-            if(book.getId().equals(id))
-            {
+    public Book getBook(@RequestParam String id) {
+        for(Book book:books) {
+            if(book.getId().equals(id)) {
                 return book;
             }
         }
@@ -30,19 +27,15 @@ public class BooksController
     }
 
     @PostMapping
-    public Book createBook(@RequestBody Book book)
-    {
+    public Book createBook(@RequestBody Book book) {
         books.add(book);
         return book;
     }
 
     @PutMapping({"/id"})
-    public Book updateBook(@RequestBody Book book,@RequestParam String id)
-    {
-        for(int i=0; i<books.size(); i++)
-        {
-            if(books.get(i).getId().equals(id))
-            {
+    public Book updateBook(@RequestBody Book book,@RequestParam String id) {
+        for(int i=0; i<books.size(); i++) {
+            if(books.get(i).getId().equals(id)) {
                 books.set(i,book);
             }
         }
@@ -50,12 +43,9 @@ public class BooksController
     }
 
     @DeleteMapping({"/id"})
-    public String deleteBook(@RequestParam String id)
-    {
-        for(int i=0; i<books.size(); i++)
-        {
-            if (books.get(i).getId().equals(id))
-            {
+    public String deleteBook(@RequestParam String id) {
+        for(int i=0; i<books.size(); i++) {
+            if (books.get(i).getId().equals(id)) {
                 books.remove(i);
             }
         }
